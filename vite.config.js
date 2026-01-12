@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from "node:url";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/2025-react-course-eee/",
+  base: process.env.NODE_ENV === 'production' ? '/2025-react-course-eee/' : '/',
   plugins: [react()],
   resolve: {
     alias: {

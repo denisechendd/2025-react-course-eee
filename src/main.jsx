@@ -11,32 +11,17 @@ import Login from "./pages/task2/Login.jsx";
 import Products from "./pages/task2/Products.jsx";
 
 const router = createHashRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
+  { path: "/", element: <App /> },
   {
     path: "/task2",
     element: <Task2 />,
     children: [
-      {
-        index: true,
-        element: <Login />,
-      },
-      {
-        path: "products",
-        element: <Products />,
-      },
+      { index: true, element: <Login /> },
+      { path: "products", element: <Products /> },
     ],
   },
-  {
-    path: "*",
-    element: <h1 className="text-center mt-5">404 Not Found</h1>,
-  },
-], {
-  // 💡 在這裡加入 basename，這要跟你的 vite.config.js 裡的 base 一致
-  basename: "/2025-react-course-eee",
-});
+  { path: "*", element: <h1 className="text-center mt-5">404 Not Found</h1> },
+]); // <--- 這裡後面不要加任何 basename 設定！！
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

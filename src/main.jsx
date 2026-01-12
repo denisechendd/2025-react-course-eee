@@ -33,7 +33,10 @@ const router = createHashRouter([
     path: "*",
     element: <h1 className="text-center mt-5">404 Not Found</h1>,
   },
-]);
+], {
+  // 💡 在這裡加入 basename，這要跟你的 vite.config.js 裡的 base 一致
+  basename: "/2025-react-course-eee",
+});
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
